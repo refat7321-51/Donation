@@ -3,217 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaza Emergency Relief | Luxury Trust Foundation</title>
+    <title>Gaza Crisis - Urgent Relief Needed</title>
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="./styles/style.css">
     
-    <!-- Font Awesome Icon Library -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Floating Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-inner">
+    <!-- Urgent Ticker -->
+    <div class="urgent-ticker">
+        <div class="ticker-content">
+            <span class="ticker-item"><i class="fa-solid fa-triangle-exclamation"></i> CRITICAL: 70% OF MEDICAL SUPPLIES DEPLETED</span>
+            <span class="ticker-item"><i class="fa-solid fa-triangle-exclamation"></i> OVER 1 MILLION FACING SEVERE STARVATION</span>
+            <span class="ticker-item"><i class="fa-solid fa-triangle-exclamation"></i> IMMEDIATE ACTION REQUIRED FOR SURVIVAL</span>
+            <span class="ticker-item"><i class="fa-solid fa-triangle-exclamation"></i> HOSPITALS OPERATING WITHOUT ANESTHESIA</span>
+        </div>
+    </div>
+
+    <!-- Stark Navbar -->
+    <nav class="navbar">
+        <div class="container nav-inner">
             <a href="#" class="brand">
-                <i class="fa-solid fa-leaf" style="color: var(--accent-primary);"></i>
-                GazaRelief.
+                GAZA<span>CRISIS</span>
             </a>
             
             <ul class="nav-links">
-                <li><a href="#mission">Our Mission</a></li>
-                <li><a href="#impact">The Impact</a></li>
-                <li><a href="#gallery">Editorial</a></li>
+                <li><a href="#reality">THE REALITY</a></li>
+                <li><a href="#pillars">HOW TO HELP</a></li>
+                <li><a href="#donate" class="text-red">DONATE NOW</a></li>
             </ul>
-            
-            <a href="#donate" class="nav-cta">Contribute Now</a>
         </div>
     </nav>
 
-    <!-- Split Hero Section -->
+    <!-- Hero - The Devastation -->
     <section class="hero">
-        <div class="hero-bg-blob"></div>
-        <div class="container hero-grid">
-            
-            <!-- Left Content -->
-            <div class="hero-content">
-                <span class="hero-label">Humanitarian Emergency</span>
-                <h1 class="hero-title">Compassion in times of crisis.</h1>
-                <p class="hero-desc">We are delivering immediate, life-saving aid to the families of Gaza. Stand with us to bring hope, medical supplies, and sustenance to those who need it most.</p>
-                <div class="hero-actions">
-                    <a href="#donate" class="btn-primary">Make a Donation</a>
-                    <a href="#mission" class="btn-secondary">Learn More</a>
-                </div>
+        <div class="hero-bg">
+            <img src="./images/PALESTINIANS-GAZA-AID.jpg" alt="Devastation in Gaza">
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-content">
+            <h1 class="hero-title">When Survival <span>Is Not Guaranteed.</span></h1>
+            <p class="hero-desc">Over 2.3 million lives hang in the balance. Families are starving, hospitals are overwhelmed, and hope is fading under the rubble. Every second you wait, a life is at risk.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#donate" class="btn-urgent">Give Immediate Aid <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                <a href="#reality" class="btn-outline">See The Reality</a>
             </div>
-            
-            <!-- Right Visual -->
-            <div class="hero-visual">
-                <img src="./images/PALESTINIANS-GAZA-AID.jpg" alt="Humanitarian Aid in Gaza" class="hero-img-main">
-                <div class="hero-glass-card">
-                    <h4>Current Urgency</h4>
-                    <p><i class="fa-solid fa-truck-medical"></i> Medical supplies critically low</p>
-                </div>
-            </div>
-            
         </div>
     </section>
 
-    <!-- Floating Donation Module -->
-    <section class="donation-section" id="donate">
+    <!-- Statistics of Loss -->
+    <section class="loss-stats">
         <div class="container">
-            <div class="donation-wrapper">
-                <div class="donation-header">
-                    <h2>Your Contribution Matters</h2>
-                    <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Choose an amount to securely fund ground rescue teams and mobile clinics operating in the most affected areas.</p>
+            <div class="loss-grid">
+                <div class="loss-item">
+                    <h3>2.3M</h3>
+                    <p>DISPLACED</p>
+                </div>
+                <div class="loss-item">
+                    <h3>70%</h3>
+                    <p>MEDICINE DEPLETED</p>
+                </div>
+                <div class="loss-item">
+                    <h3>63%</h3>
+                    <p>ACUTE HUNGER</p>
+                </div>
+                <div class="loss-item">
+                    <h3>0</h3>
+                    <p>SAFE ZONES</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raw Donation Interface -->
+    <section class="donate-section" id="donate">
+        <div class="container">
+            <div class="donate-container">
+                <div class="donate-header">
+                    <h2 class="text-red">EMERGENCY INTERVENTION</h2>
+                    <p class="section-subtitle" style="margin-bottom: 0;">Your contribution bypasses bureaucracy to deliver immediate trauma kits, survival rations, and clean water directly to those trapped in the crisis zone.</p>
                 </div>
                 
-                <div class="donation-amounts" id="amtContainer">
-                    <button class="amt-pill" data-val="100">100 BDT</button>
-                    <button class="amt-pill" data-val="500">500 BDT</button>
-                    <button class="amt-pill active" data-val="1000">1,000 BDT</button>
-                    <button class="amt-pill" data-val="5000">5,000 BDT</button>
-                    <button class="amt-pill" data-val="10000">10,000 BDT</button>
+                <div class="amount-grid" id="amountGrid">
+                    <button class="amt-btn" data-amt="100">100 BDT</button>
+                    <button class="amt-btn" data-amt="500">500 BDT</button>
+                    <button class="amt-btn active" data-amt="1000">1000 BDT</button>
+                    <button class="amt-btn" data-amt="5000">5000 BDT</button>
+                    <button class="amt-btn" data-amt="10000">10K BDT</button>
                 </div>
                 
                 <div class="custom-input-box">
-                    <input type="number" id="customInput" placeholder="Enter custom amount (BDT)">
+                    <input type="number" id="customInput" placeholder="OR ENTER CUSTOM AMOUNT">
                 </div>
                 
-                <button class="btn-primary donate-submit-btn" id="donateBtn">Proceed with Donation</button>
+                <button class="btn-urgent donate-submit-btn" id="donateBtn">PROCESS CRITICAL DONATION</button>
             </div>
         </div>
     </section>
 
-    <!-- Elegant Impact Cards -->
-    <section class="impact-section" id="impact">
+    <!-- The Reality (Documentary Gallery) -->
+    <section class="reality-section" id="reality">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Direct <span class="text-accent">Impact</span></h2>
-            <p class="section-subtitle" style="text-align: center; margin: 0 auto 4rem;">Transparency is our priority. Every contribution directly funds essential survival pillars.</p>
+            <h2 class="section-title">UNFILTERED <span class="text-red">REALITY</span></h2>
+            <p class="section-subtitle">Behind the statistics are human beings. Look at the reality of what is happening on the ground.</p>
             
-            <div class="impact-grid">
+            <div class="story-grid">
                 
-                <div class="impact-card">
-                    <div class="impact-icon">
+                <!-- Story 1 -->
+                <div class="story-item">
+                    <div class="story-image">
+                        <img src="./images/sad.jpg" alt="Child in ruins">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-meta">01 // THE HUNGER</span>
+                        <h3>Desperation in the Face of Scarcity.</h3>
+                        <p>The profound hunger crisis has reached a breaking point. Individuals reach out with empty pots, their faces reflecting a desperate search for basic sustenance amidst the ruins of their homes.</p>
+                        <a href="#donate" class="text-red" style="font-family: var(--font-headline); font-size: 1.25rem; letter-spacing: 0.05em;">HELP FEED A FAMILY <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="story-item">
+                    <div class="story-image">
+                        <img src="./images/food.jpg" alt="Hospital crisis">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-meta">02 // THE MEDICAL COLLAPSE</span>
+                        <h3>Medicine Without Borders.</h3>
+                        <p>Overworked doctors are forced to perform life-saving surgeries without anesthesia or sterile equipment. The health system has completely collapsed under the weight of continuous casualties.</p>
+                        <a href="#donate" class="text-red" style="font-family: var(--font-headline); font-size: 1.25rem; letter-spacing: 0.05em;">SEND MEDICAL AID <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="story-item">
+                    <div class="story-image">
+                        <img src="./images/gaza stri.jpg" alt="Ration lines">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-meta">03 // THE DAILY STRUGGLE</span>
+                        <h3>Breadlines of Hope.</h3>
+                        <p>Thousands wait daily in endless lines for basic flour and water. In a territory where 63% face acute food insecurity, a single meal is the difference between life and death.</p>
+                        <a href="#donate" class="text-red" style="font-family: var(--font-headline); font-size: 1.25rem; letter-spacing: 0.05em;">PROVIDE RATIONS <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Survival Pillars -->
+    <section class="pillars-section" id="pillars">
+        <div class="container">
+            <h2 class="section-title">YOUR <span class="text-red">INTERVENTION</span></h2>
+            
+            <div class="pillars-grid" style="margin-top: 3rem;">
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
                         <img src="./icons/medicine.svg" alt="Medical">
                     </div>
-                    <h3>Medical Relief</h3>
-                    <p>Delivering critical trauma kits, antibiotics, and surgical equipment to frontline operating hospitals.</p>
+                    <h4>TRAUMA & MEDICAL</h4>
+                    <p>Delivering critical trauma kits, antibiotics, and surgical equipment directly to operating frontline hospitals.</p>
                 </div>
                 
-                <div class="impact-card">
-                    <div class="impact-icon">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
                         <img src="./icons/food.png" alt="Food">
                     </div>
-                    <h3>Sustenance</h3>
-                    <p>Distributing high-calorie survival food packs and ensuring access to clean, safe drinking water.</p>
+                    <h4>EMERGENCY RATIONS</h4>
+                    <p>Distributing high-calorie survival food packs and ensuring access to clean drinking water.</p>
                 </div>
                 
-                <div class="impact-card">
-                    <div class="impact-icon">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
                         <img src="./icons/shelter.png" alt="Shelter">
                     </div>
-                    <h3>Safe Shelter</h3>
-                    <p>Providing winterized tents, thermal blankets, and temporary housing for displaced families.</p>
+                    <h4>WINTER SURVIVAL</h4>
+                    <p>Providing thermal blankets, winterized tents, and temporary housing for displaced families.</p>
                 </div>
                 
             </div>
         </div>
     </section>
 
-    <!-- Editorial Gallery -->
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-            <h2 class="section-title">Visual <span class="text-accent">Editorial</span></h2>
-            <p class="section-subtitle">Real stories and unedited realities from the ground.</p>
-            
-            <div class="editorial-grid">
-                
-                <div class="editorial-item large">
-                    <img src="./images/sad.jpg" alt="Crisis in Gaza">
-                    <div class="editorial-caption">
-                        <h4>Faces of Resilience</h4>
-                        <p>Amidst profound hardship, the enduring spirit of the people remains unbroken.</p>
-                    </div>
-                </div>
-                
-                <div class="editorial-item">
-                    <img src="./images/food.jpg" alt="Hospital">
-                    <div class="editorial-caption">
-                        <h4>Medical Frontlines</h4>
-                        <p>Overworked professionals performing miracles with limited supplies.</p>
-                    </div>
-                </div>
-                
-                <div class="editorial-item">
-                    <img src="./images/gaza stri.jpg" alt="Distribution">
-                    <div class="editorial-caption">
-                        <h4>Community Strength</h4>
-                        <p>Waiting for daily rations while supporting one another.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Minimal Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
-                
-                <div>
-                    <h2 class="footer-brand">GazaRelief.</h2>
-                    <p style="color: rgba(255,255,255,0.7); max-width: 400px; font-size: 1.125rem;">A trusted foundation dedicated to delivering immediate, transparent, and life-saving aid to those affected by the crisis.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>GAZA<span class="text-red">CRISIS</span></h2>
+                    <p>We are a direct-action initiative bypassing traditional bureaucracy to deliver immediate, life-saving aid to the people of Gaza. We bear witness, and we act.</p>
                 </div>
                 
                 <div>
-                    <h4 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">Join the Initiative</h4>
-                    <p style="color: rgba(255,255,255,0.7);">Subscribe for encrypted, transparent updates on aid distribution.</p>
+                    <h4 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">STAY INFORMED.</h4>
+                    <p style="font-family: var(--font-story); color: var(--text-muted);">Receive unfiltered reports from the ground.</p>
                     <form class="newsletter-form" id="newsForm">
-                        <input type="email" id="newsEmail" placeholder="Your email address" required>
-                        <button type="submit">Subscribe</button>
+                        <input type="email" id="newsEmail" placeholder="ENTER EMAIL" required>
+                        <button type="submit">SUBSCRIBE</button>
                     </form>
                 </div>
-                
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 GazaRelief Foundation. All rights reserved.</p>
+                <p>&copy; 2026 Crisis Relief Intervention.</p>
                 <div style="display: flex; gap: 2rem;">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#">SECURE POLICY</a>
+                    <a href="#">TRANSPARENCY REPORT</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Luxury Toast -->
+    <!-- Stark Toast -->
     <div class="toast" id="toast">
-        <i class="fa-solid fa-circle-check"></i>
-        <p id="toastMsg">Action completed.</p>
+        <i class="fa-solid fa-check"></i>
+        <span id="toastMsg">ACTION CONFIRMED.</span>
     </div>
 
     <!-- Interactions -->
     <script>
         // Interactive Donation
-        const pills = document.querySelectorAll('.amt-pill');
+        const btns = document.querySelectorAll('.amt-btn');
         const customInput = document.getElementById('customInput');
         const donateBtn = document.getElementById('donateBtn');
         let selectedAmt = 1000;
 
-        pills.forEach(pill => {
-            pill.addEventListener('click', () => {
-                pills.forEach(p => p.classList.remove('active'));
-                pill.classList.add('active');
-                selectedAmt = pill.getAttribute('data-val');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedAmt = btn.getAttribute('data-amt');
                 customInput.value = '';
             });
         });
 
         customInput.addEventListener('input', (e) => {
             if(e.target.value) {
-                pills.forEach(p => p.classList.remove('active'));
+                btns.forEach(b => b.classList.remove('active'));
                 selectedAmt = e.target.value;
             }
         });
@@ -229,9 +261,9 @@
         donateBtn.addEventListener('click', () => {
             const finalAmt = customInput.value || selectedAmt;
             if(finalAmt > 0) {
-                showToast(`Thank you for your generous pledge of ${finalAmt} BDT.`);
+                showToast(`DONATION OF ${finalAmt} BDT CONFIRMED.`);
                 customInput.value = '';
-                pills.forEach(p => p.classList.remove('active'));
+                btns.forEach(b => b.classList.remove('active'));
             }
         });
 
@@ -239,7 +271,7 @@
             e.preventDefault();
             const email = document.getElementById('newsEmail').value;
             if(email) {
-                showToast(`Welcome. Updates will be sent to ${email}`);
+                showToast(`SUBSCRIBED: ${email}`);
                 e.target.reset();
             }
         });
