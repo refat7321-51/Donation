@@ -707,7 +707,6 @@ a {
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .menu-toggle { display: block; }
   .hero-title { font-size: 3rem; }
   .hero-actions { flex-direction: column; }
   .amount-grid { grid-template-columns: repeat(2, 1fr); }
