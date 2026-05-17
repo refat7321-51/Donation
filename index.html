@@ -4,136 +4,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Emergency Relief - Donate to Save Lives</title>
+    
+    <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="./styles/style.css">
+    
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <title>Donate</title>
+    
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <header>
-        <section class="banner-section container">
-            <div class="banner-container">
-                <h2 class="banner-head">Let's Help Those Who Are More In Need</h2>
-                <p class="description">"Help Gaza Now: Families are starving, hospitals overwhelmed, and hope is fading.
-                    Your donation can save lives. Give today." </p>
+    <!-- Sticky Glassmorphic Header & Navigation -->
+    <header class="main-header" id="mainHeader">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <div class="logo-text">Gaza<span>Relief</span></div>
+            </a>
+            
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#donationSection" class="nav-link">Donate</a></li>
+                <li><a href="#plansSection" class="nav-link">How It Helps</a></li>
+                <li><a href="#impactSection" class="nav-link">Impact</a></li>
+                <li><a href="#gallerySection" class="nav-link">Gallery</a></li>
+                <li><a href="#donationSection" class="btn-primary nav-cta">Donate Now</a></li>
+            </ul>
+        </div>
+    </header>
 
-                <button class="btn-primary">Donate Now</button>
+    <main>
+        <!-- Hero Banner Section -->
+        <section class="banner-section" id="home">
+            <div class="banner-container">
+                <div class="banner-badge">
+                    <span></span> Emergency Relief Campaign
+                </div>
+                <h1 class="banner-head">Let's Help Those Who Are <br><span>More In Need</span></h1>
+                <p class="description">"Help Gaza Now: Families are starving, hospitals overwhelmed, and hope is fading. Your donation can save lives. Give today."</p>
+                <a href="#donationSection" class="btn-primary banner-btn">Donate Now <i class="fa-solid fa-arrow-right-long" style="margin-left: 8px;"></i></a>
             </div>
         </section>
-    </header>
-    <main>
-        <!-- Add this AFTER your existing banner section -->
-        <section class="donation-section container">
+
+        <!-- Donation Interactive Section -->
+        <section class="donation-section container" id="donationSection">
             <div class="section-header">
                 <h2>Emergency Relief for Gaza</h2>
-                <p class="section-description">Families in Gaza are facing unimaginable hardship - your support provides
-                    food, medicine, and shelter to those who have lost everything.</p>
+                <p class="section-description">Families in Gaza are facing unimaginable hardship - your support provides food, medicine, and shelter to those who have lost everything.</p>
             </div>
 
-            <div class="donation-amounts">
-                <div class="amount-option" data-amount="100">100tk</div>
-                <div class="amount-option" data-amount="200">200tk</div>
-                <div class="amount-option" data-amount="500">500tk</div>
-                <div class="amount-option" data-amount="1000">1000tk</div>
-                <div class="amount-option" data-amount="5000">5000tk</div>
-            </div>
-
-            <div class="custom-amount">
-                <input type="number" placeholder="Other Amount (Taka)" class="amount-input" id="customAmount">
-            </div>
-
-            <button class="donate-btn">Donate Now</button>
-        </section>
-
-        <section class="donation-plans container">
-            <div class="section-header">
-                <h2 class="help">How Your Donation Helps</h2>
-                <p class="section-description help">Every contribution makes a difference in the lives of Gaza's most
-                    vulnerable</p>
-            </div>
-
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <div class="plan-icon">🍞</div>
-                    <h3>Food Supplies</h3>
-                    <p>Provide emergency food packages to feed a family for one week</p>
-                </div>
-                <div class="plan-card">
-                    <div class="plan-icon">💊</div>
-                    <h3>Medical Aid</h3>
-                    <p>Deliver critical medicines and supplies to overwhelmed hospitals</p>
-                </div>
-                <div class="plan-card">
-                    <div class="plan-icon">🏠</div>
-                    <h3>Shelter</h3>
-                    <p>Help rebuild homes destroyed in the conflict</p>
-                </div>
-            </div>
-        </section>
-        <!-- Add this AFTER your previous donation section -->
-        <section class="impact-section">
-            <div class="container">
-                <div class="impact-header">
-                    <h2>Their Lives Depend On Your Donation</h2>
-                    <p class="impact-subtitle">In Gaza, every minute counts. Your support provides urgent life-saving
-                        aid to families struggling to survive.</p>
+            <div class="donation-card-box">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 700; font-size: 1.25rem;">Select Donation Amount</h3>
+                
+                <div class="donation-amounts">
+                    <div class="amount-option" data-amount="100">100 TK</div>
+                    <div class="amount-option" data-amount="200">200 TK</div>
+                    <div class="amount-option" data-amount="500">500 TK</div>
+                    <div class="amount-option" data-amount="1000">1000 TK</div>
+                    <div class="amount-option" data-amount="5000">5000 TK</div>
                 </div>
 
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon">❤️</div>
-                        <h3>Critical Needs</h3>
-                        <p>Over 1 million Gazans face severe food insecurity. Your donation provides emergency meals and
-                            clean water.</p>
+                <div class="custom-amount">
+                    <div class="amount-input-wrapper">
+                        <span class="input-prefix">Tk</span>
+                        <input type="number" placeholder="Other Amount (Taka)" class="amount-input" id="customAmount" min="1">
+                        <span class="input-suffix">BDT</span>
                     </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">🏥</div>
-                        <h3>Medical Crisis</h3>
-                        <p>Hospitals are overwhelmed with 70% of medications depleted. Your support delivers vital
-                            medical supplies.</p>
+                </div>
+
+                <button class="btn-primary donate-btn" id="submitDonationBtn">Donate Now <i class="fa-solid fa-heart" style="margin-left: 8px;"></i></button>
+            </div>
+        </section>
+
+        <!-- Donation Plans (How your donation helps) -->
+        <section class="donation-plans" id="plansSection">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How Your Donation Helps</h2>
+                    <p class="section-description">Every contribution makes a difference in the lives of Gaza's most vulnerable</p>
+                </div>
+
+                <div class="plans-grid">
+                    <!-- Food Supplies Card -->
+                    <div class="plan-card">
+                        <div class="plan-icon-container">
+                            <img src="./icons/food.png" class="plan-icon" alt="Food Supplies Icon">
+                        </div>
+                        <h3>Food Supplies</h3>
+                        <p>Provide emergency food packages to feed a family for one week and prevent severe malnutrition.</p>
+                    </div>
+                    
+                    <!-- Medical Aid Card -->
+                    <div class="plan-card">
+                        <div class="plan-icon-container">
+                            <img src="./icons/medicine.svg" class="plan-icon" alt="Medical Aid Icon">
+                        </div>
+                        <h3>Medical Aid</h3>
+                        <p>Deliver critical medicines, first-aid kits, and vital medical supplies to overwhelmed local hospitals.</p>
+                    </div>
+                    
+                    <!-- Shelter Card -->
+                    <div class="plan-card">
+                        <div class="plan-icon-container">
+                            <img src="./icons/shelter.png" class="plan-icon" alt="Shelter Icon">
+                        </div>
+                        <h3>Shelter</h3>
+                        <p>Help rebuild homes destroyed in the conflict and provide safe, temporary shelters for displaced families.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="contribute-section">
+        <!-- Impact Section (Infographic + Details) -->
+        <section class="impact-section container" id="impactSection">
+            <div class="impact-layout">
+                <!-- Left Side: Visual Emotional Image -->
+                <div class="impact-visual">
+                    <img src="./images/_WA_3062.jpg" alt="Humanitarian crisis impact scene in Gaza">
+                    <div class="impact-visual-overlay">
+                        <div class="impact-badge">Urgent Support Needed</div>
+                        <div class="impact-visual-text">
+                            <h4>Crisis in Gaza</h4>
+                            <p>More than 2.3 million lives hang in the balance, relying on immediate aid for basic survival.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Impact Cards & Copy -->
+                <div class="impact-content">
+                    <div class="impact-header">
+                        <h2>Their Lives Depend On Your Donation</h2>
+                        <p class="impact-subtitle">In Gaza, every minute counts. Your support provides urgent life-saving aid to families struggling to survive.</p>
+                    </div>
+
+                    <div class="impact-grid">
+                        <!-- Card 1 -->
+                        <div class="impact-card">
+                            <div class="impact-card-icon">
+                                <img src="./icons/blood.svg" class="icon" alt="Critical Needs Icon">
+                            </div>
+                            <div class="impact-info">
+                                <h3>Critical Needs</h3>
+                                <p>Over 1 million Gazans face severe food insecurity. Your donation provides emergency meals, clean drinking water, and sanitation hygiene packages.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="impact-card">
+                            <div class="impact-card-icon">
+                                <img src="./icons/medicine.svg" class="icon" alt="Medical Crisis Icon">
+                            </div>
+                            <div class="impact-info">
+                                <h3>Medical Crisis</h3>
+                                <p>Hospitals are overwhelmed with 70% of medications completely depleted. Your support delivers vital medical kits and surgical supplies directly to first responders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contribute Section (Process Steps) -->
+        <section class="contribute-section" id="contributeSection">
             <div class="container">
-                <div class="contribute-header">
+                <div class="section-header">
                     <h2>How You Can Help</h2>
-                    <p class="contribute-subtitle">Your contribution makes an immediate difference in these three simple
-                        ways</p>
+                    <p class="section-description">Your contribution makes an immediate difference in these three simple ways</p>
                 </div>
 
                 <div class="contribute-steps">
+                    <!-- Step 1 -->
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>Donate</h3>
-                        <p>Give any amount - even $10 can provide a family with clean water for a day</p>
+                        <p>Give any amount - even a small contribution can provide a family with clean water and daily bread.</p>
                     </div>
+                    
+                    <!-- Step 2 -->
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>Share</h3>
-                        <p>Spread awareness on social media to multiply your impact</p>
+                        <p>Spread awareness on social media to inspire friends and family to join the cause and multiply your impact.</p>
                     </div>
+                    
+                    <!-- Step 3 -->
                     <div class="step">
                         <div class="step-number">3</div>
                         <h3>Advocate</h3>
-                        <p>Contact your representatives to demand humanitarian access</p>
+                        <p>Contact your local community representatives and demand consistent, unimpeded humanitarian access to Gaza.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="gaza-gallery">
+        <!-- Gaza Gallery Section -->
+        <section class="gaza-gallery" id="gallerySection">
             <div class="container">
-                <div class="gallery-header">
+                <div class="section-header">
                     <h2>Through Their Eyes: Life in Gaza</h2>
-                    <p class="gallery-subtitle">These powerful images capture the resilience and suffering of
-                        Palestinian families</p>
+                    <p class="section-description">These powerful images capture the resilience and suffering of Palestinian families</p>
                 </div>
 
                 <div class="gallery-grid">
@@ -142,94 +221,285 @@
                         <img src="./images/sad.jpg" alt="Destroyed building in Gaza">
                         <div class="image-caption">Photo by: Ahmed Al Arini</div>
                         <div class="image-story">
-                            <h3>Hunger's Grip: Desperation in the Face of Scarcity
-
-                            </h3>
-                            <p>The image powerfully depicts the profound hunger crisis in Gaza, as individuals reach out
-                                with empty pots, their faces reflecting a desperate search for food. It's a poignant
-                                testament to the immense hardships faced by the region's population, highlighting their
-                                daily struggle for basic sustenance.</p>
+                            <h3>Hunger's Grip: Desperation in the Face of Scarcity</h3>
+                            <p>The image powerfully depicts the profound hunger crisis in Gaza, as individuals reach out with empty pots, their faces reflecting a desperate search for food. It's a poignant testament to the immense hardships faced by the region's population, highlighting their daily struggle for basic sustenance.</p>
                         </div>
                     </div>
 
                     <!-- Row 2 - Two equal images -->
                     <div class="gallery-item">
-                        <img src="./images/food.jpg" alt="Gaza hospital scene">
-                        <div class="image-caption">Photo by Ahmed Al Ajriri</div>
+                        <img src="./images/food.jpg" alt="Gaza food scene">
+                        <div class="image-caption">Photo by: Ahmed Al Ajriri</div>
                         <div class="image-story">
                             <h3>Medicine Without Borders</h3>
-                            <p>Overworked doctors perform surgeries without anesthesia. Your support delivers critical
-                                medical supplies to overwhelmed hospitals.</p>
+                            <p>Overworked doctors perform surgeries without anesthesia. Your support delivers critical medical supplies to overwhelmed hospitals.</p>
                         </div>
                     </div>
 
                     <div class="gallery-item">
                         <img src="./images/gaza stri.jpg" alt="Food distribution in Gaza">
-                        <div class="image-caption">Photo by Ahmed Al Ajriri</div>
+                        <div class="image-caption">Photo by: Ahmed Al Ajriri</div>
                         <div class="image-story">
                             <h3>Breadlines of Hope</h3>
-                            <p>Thousands wait daily for food rations in a territory where 63% face acute food
-                                insecurity. Your donation provides emergency meals.</p>
+                            <p>Thousands wait daily for food rations in a territory where 63% face acute food insecurity. Your donation provides emergency meals.</p>
                         </div>
                     </div>
 
                     <!-- Row 3 - Full width with different aspect ratio -->
-                    <div class="gallery-item full-width panorama">
+                    <div class="gallery-item full-width">
                         <img src="./images/hunger.jpg" alt="Gaza cityscape at dusk">
                         <div class="image-caption">Photo by: Ahmed Al Arini</div>
                         <div class="image-story">
                             <h3>A City Under Siege</h3>
-                            <p>Gaza's skyline tells a story of resilience amidst destruction. 2.3 million people live in
-                                what the UN calls "uninhabitable" conditions.</p>
+                            <p>Gaza's skyline tells a story of resilience amidst destruction. 2.3 million people live in what the UN calls "uninhabitable" conditions.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="updates-section">
+        <!-- Stay Connected Updates Section -->
+        <section class="updates-section" id="updatesSection">
             <div class="container">
                 <div class="updates-header">
                     <h2>Stay Connected With Our Mission</h2>
                     <p class="updates-subtitle">Receive updates on how your donation is making an impact in Gaza</p>
                 </div>
 
-                <form class="updates-form">
-                    <input type="email" placeholder="Your Email Address" required>
-                    <button type="submit">Subscribe</button>
+                <form class="updates-form" id="newsletterForm">
+                    <input type="email" placeholder="Your Email Address" id="newsletterEmail" required>
+                    <button type="submit">Subscribe <i class="fa-solid fa-paper-plane" style="margin-left: 6px;"></i></button>
                 </form>
             </div>
         </section>
     </main>
     
+    <!-- Premium Footer Section -->
     <footer class="footer">
-        <div class="footer-text">
-          <p>Copyright; 2025 by REFAT.. All Rights Reserved.</p>
+        <div class="container">
+            <div class="footer-top">
+                <!-- Column 1: Brand & Info -->
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: #ffffff;">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="logo-text">Gaza<span>Relief</span></div>
+                    </a>
+                    <p>Dedicated to delivering swift and impactful emergency assistance, clean water, medical aid, and warm meals to families facing hardships in the Gaza Strip.</p>
+                    <div class="footer-socials">
+                        <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="social-icon" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#donationSection">Donate</a></li>
+                        <li><a href="#plansSection">How It Helps</a></li>
+                        <li><a href="#impactSection">Impact Details</a></li>
+                        <li><a href="#gallerySection">Gaza Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resource Links -->
+                <div class="footer-col">
+                    <h4>Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="#donationSection">Emergency Funds</a></li>
+                        <li><a href="#contributeSection">Volunteering</a></li>
+                        <li><a href="#updatesSection">Monthly Subscriptions</a></li>
+                        <li><a href="#gallerySection">Resilience Stories</a></li>
+                        <li><a href="#plansSection">Aid Distribution</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-info">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <p style="font-weight: 600; color: #fff;">Email Address</p>
+                                <p>support@gazarelief.org</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <p style="font-weight: 600; color: #fff;">Main Headquarters</p>
+                                <p>Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-text">
+                    <p>&copy; 2026 Gaza Relief Campaign by REFAT. All Rights Reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
         </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const options = document.querySelectorAll('.amount-option');
-    const customInput = document.getElementById('customAmount');
+        
+        <!-- Back-to-Top Floating Button -->
+        <div class="footer-iconTop" id="toTopButton">
+            <a href="#" class="btn-to-top" aria-label="Scroll to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
 
+    <!-- Custom Toast Notifications (Success messages) -->
+    <div class="toast-notification" id="toastNotification">
+        <div class="toast-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="toast-content">
+            <h5 id="toastTitle">Thank You!</h5>
+            <p id="toastMessage">Your action completed successfully.</p>
+        </div>
+    </div>
 
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            // Custom input clear
+    <!-- Interactive JavaScript Logic -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- 1. Navigation and Sticky Header ---
+        const mainHeader = document.getElementById('mainHeader');
+        const toTopButton = document.getElementById('toTopButton');
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
+        
+        // Sticky Header & Back-to-Top scroll transition
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 400) {
+                toTopButton.classList.add('visible');
+            } else {
+                toTopButton.classList.remove('visible');
+            }
+        });
+
+        // Mobile Nav Hamburger Toggle
+        mobileNavToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            // Toggle hamburger icon state
+            const icon = mobileNavToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars-staggered';
+            }
+        });
+
+        // Close Mobile Menu on Nav Link clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileNavToggle.querySelector('i').className = 'fa-solid fa-bars-staggered';
+            });
+        });
+
+        // --- 2. Interactive Donation Controls ---
+        const amountOptions = document.querySelectorAll('.amount-option');
+        const customInput = document.getElementById('customAmount');
+        const donateBtn = document.getElementById('submitDonationBtn');
+        let selectedDonationAmount = 0;
+
+        amountOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Clear custom input value
+                customInput.value = '';
+                
+                // Remove selected class from all options
+                amountOptions.forEach(o => o.classList.remove('selected'));
+                
+                // Add selected class to current option
+                option.classList.add('selected');
+                
+                // Parse the selected amount
+                selectedDonationAmount = parseInt(option.getAttribute('data-amount'));
+            });
+        });
+
+        // Clear preset selections when custom input changes
+        customInput.addEventListener('input', () => {
+            amountOptions.forEach(o => o.classList.remove('selected'));
+            selectedDonationAmount = parseFloat(customInput.value) || 0;
+        });
+
+        // --- 3. Toast Notifications and Submissions ---
+        const toast = document.getElementById('toastNotification');
+        const toastTitle = document.getElementById('toastTitle');
+        const toastMessage = document.getElementById('toastMessage');
+
+        function showToast(title, message) {
+            toastTitle.textContent = title;
+            toastMessage.textContent = message;
+            toast.classList.add('active');
+            
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 4500);
+        }
+
+        // Donation Submission Handling
+        donateBtn.addEventListener('click', () => {
+            // Determine final amount
+            const finalAmount = customInput.value ? parseFloat(customInput.value) : selectedDonationAmount;
+            
+            if (!finalAmount || finalAmount <= 0) {
+                showToast('Action Required', 'Please select an amount or enter a valid donation value.');
+                return;
+            }
+            
+            // Success Message
+            showToast(
+                'Donation Received!', 
+                `Thank you so much for donating ${finalAmount} TK. Your support helps save lives in Gaza.`
+            );
+            
+            // Reset input values
             customInput.value = '';
+            amountOptions.forEach(o => o.classList.remove('selected'));
+            selectedDonationAmount = 0;
+        });
 
-            options.forEach(o => o.classList.remove('selected'));
+        // Newsletter Subscription Handling
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterEmail = document.getElementById('newsletterEmail');
 
-            option.classList.add('selected');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterEmail.value;
+            
+            if (email) {
+                showToast(
+                    'Subscribed Successfully!', 
+                    `Thank you! We will send emergency impact updates to ${email}.`
+                );
+                newsletterForm.reset();
+            }
         });
     });
-
-   
-    customInput.addEventListener('input', () => {
-        options.forEach(o => o.classList.remove('selected'));
-    });
-});
-</script>
-
+    </script>
 </body>
 
 </html>
