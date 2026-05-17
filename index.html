@@ -203,22 +203,24 @@
 
     <!-- Voices from the Ground -->
     <section class="voices-section reveal">
-        <div class="container">
-            <div class="quote-container">
-                <div class="quote-slider-wrapper" id="quoteWrapper">
-                    <div class="quote-slider-track" id="quoteTrack">
-                        <div class="quote-slide">
-                            <p class="quote-text">"We are operating without electricity, without anesthesia, and without basic supplies. The world must not look away."</p>
-                            <span class="quote-author">- DR. AHMED, SURGEON IN NORTHERN GAZA</span>
-                        </div>
-                        <div class="quote-slide">
-                            <p class="quote-text">"Every drop of water is a luxury. My children ask for bread, and I have nothing to give them but hope."</p>
-                            <span class="quote-author">- FATIMA, MOTHER OF THREE</span>
-                        </div>
-                        <div class="quote-slide">
-                            <p class="quote-text">"The sheer scale of destruction is beyond comprehension. We need immediate, unfiltered access to deliver aid."</p>
-                            <span class="quote-author">- UN AID WORKER ON THE GROUND</span>
-                        </div>
+        <div class="container" style="max-width: 1400px;">
+            <div class="quote-slider-wrapper" id="quoteWrapper">
+                <div class="quote-slider-track">
+                    <div class="quote-slide">
+                        <p class="quote-text">"We are operating without electricity, without anesthesia, and without basic supplies. The world must not look away."</p>
+                        <span class="quote-author">- DR. AHMED, SURGEON IN NORTHERN GAZA</span>
+                    </div>
+                    <div class="quote-slide">
+                        <p class="quote-text">"Every drop of water is a luxury. My children ask for bread, and I have nothing to give them but hope."</p>
+                        <span class="quote-author">- FATIMA, MOTHER OF THREE</span>
+                    </div>
+                    <div class="quote-slide">
+                        <p class="quote-text">"The sheer scale of destruction is beyond comprehension. We need immediate, unfiltered access to deliver aid."</p>
+                        <span class="quote-author">- UN AID WORKER ON THE GROUND</span>
+                    </div>
+                    <div class="quote-slide">
+                        <p class="quote-text">"Our humanity is being tested here. The longer we wait, the more innocent lives are lost to the rubble and starvation."</p>
+                        <span class="quote-author">- LOCAL PARAMEDIC</span>
                     </div>
                 </div>
             </div>
@@ -369,35 +371,48 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         
-        // Horizontal Quote Slider
-        const quoteTrack = document.getElementById('quoteTrack');
-        const quoteWrapper = document.getElementById('quoteWrapper');
+        // Center-Focused Carousel
+        const slides = document.querySelectorAll('.quote-slide');
+        const wrapper = document.getElementById('quoteWrapper');
+        let currentSlide = 0;
         let slideInterval;
 
-        function autoSlide() {
-            const maxScroll = quoteTrack.scrollWidth - quoteTrack.clientWidth;
-            if (quoteTrack.scrollLeft >= maxScroll - 10) {
-                quoteTrack.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                quoteTrack.scrollBy({ left: quoteTrack.clientWidth, behavior: 'smooth' });
-            }
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev', 'next');
+                
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlide + 1) % slides.length) {
+                    slide.classList.add('next');
+                } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
+                    slide.classList.add('prev');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
         }
 
         function startSlider() {
-            slideInterval = setInterval(autoSlide, 3500); // 3.5 seconds
+            slideInterval = setInterval(nextSlide, 4000);
         }
 
         function stopSlider() {
             clearInterval(slideInterval);
         }
 
+        // Initialize
+        updateSlider();
         startSlider();
 
         // Pause on interaction
-        quoteWrapper.addEventListener('mouseenter', stopSlider);
-        quoteWrapper.addEventListener('mouseleave', startSlider);
-        quoteWrapper.addEventListener('touchstart', stopSlider);
-        quoteWrapper.addEventListener('touchend', startSlider);
+        wrapper.addEventListener('mouseenter', stopSlider);
+        wrapper.addEventListener('mouseleave', startSlider);
+        wrapper.addEventListener('touchstart', stopSlider);
+        wrapper.addEventListener('touchend', startSlider);
     </script>
 
 </body>
