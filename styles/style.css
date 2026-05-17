@@ -86,7 +86,7 @@ a {
    TYPOGRAPHY & UTILITIES
    ========================================================================== */
 .section-title {
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   margin-bottom: 1rem;
   border-bottom: 4px solid var(--blood-red);
   display: inline-block;
@@ -300,8 +300,8 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(4rem, 8vw, 7rem);
-  line-height: 1;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
@@ -339,10 +339,10 @@ a {
 }
 
 .loss-item h3 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: white;
   margin-bottom: 0.5rem;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .loss-item p {
@@ -380,7 +380,7 @@ a {
 }
 
 .donate-header h2 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
@@ -519,9 +519,9 @@ a {
 }
 
 .story-content h3 {
-  font-size: 3rem;
+  font-size: 2.25rem;
   margin-bottom: 1.5rem;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .story-content p {
@@ -569,7 +569,7 @@ a {
 }
 
 .pillar-card h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
@@ -595,7 +595,7 @@ a {
 }
 
 .footer-brand h2 {
-  font-size: 3rem;
+  font-size: 2.25rem;
   margin-bottom: 1.5rem;
 }
 
@@ -784,10 +784,10 @@ a {
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .hero-title { font-size: 4rem; }
+  .hero-title { font-size: 2.75rem; }
   .hero-desc { font-size: 1.125rem; }
   .donate-container { padding: 2rem; }
   .amount-grid { grid-template-columns: repeat(2, 1fr); }
-  .section-title { font-size: 3rem; }
-  .story-content h3 { font-size: 2rem; }
+  .section-title { font-size: 2.25rem; }
+  .story-content h3 { font-size: 1.75rem; }
 }
