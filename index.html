@@ -85,7 +85,17 @@
             <div class="donate-container">
                 <div class="donate-header">
                     <h2 class="text-red">EMERGENCY INTERVENTION</h2>
-                    <p class="section-subtitle" style="margin-bottom: 0;">Your contribution bypasses bureaucracy to deliver immediate trauma kits, survival rations, and clean water directly to those trapped in the crisis zone.</p>
+                    <p class="section-subtitle" style="margin-bottom: 2rem;">Your contribution bypasses bureaucracy to deliver immediate trauma kits, survival rations, and clean water directly to those trapped in the crisis zone.</p>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>FUNDS RAISED: 13,450,000 BDT</span>
+                        <span class="text-red">GOAL: 20,000,000 BDT</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill"></div>
+                    </div>
                 </div>
                 
                 <div class="amount-grid" id="amountGrid">
@@ -191,6 +201,27 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">CRITICAL <span class="text-red">QUESTIONS</span></h2>
+            <div class="faq-container" style="margin-top: 3rem;">
+                <div class="faq-item">
+                    <div class="faq-question">Where does my money go? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>100% of your donation is directed to frontline medical response, emergency food rations, and winter shelters. We operate with zero administrative overhead from these specific funds.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How is aid delivered safely? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>We work with trusted, vetted local NGOs and medical personnel who are already inside the crisis zone, bypassing external bureaucratic blockades.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is my donation secure? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Yes, all transactions are encrypted using bank-level security protocols. We provide transparent reports to all newsletter subscribers.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -275,6 +306,28 @@
                 e.target.reset();
             }
         });
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Real-time Fake Donor Notifications
+        const donorNames = ['Ahmed M.', 'Sarah K.', 'Hassan R.', 'Anonymous', 'Fatima A.', 'Tariq S.'];
+        const donorAmounts = ['500 BDT', '1000 BDT', '5000 BDT', '2000 BDT', '10000 BDT'];
+        
+        setTimeout(() => {
+            setInterval(() => {
+                const name = donorNames[Math.floor(Math.random() * donorNames.length)];
+                const amount = donorAmounts[Math.floor(Math.random() * donorAmounts.length)];
+                showToast(`${name} DONATED ${amount} JUST NOW.`);
+            }, 12000);
+        }, 5000);
     </script>
 
 </body>
