@@ -363,21 +363,50 @@
         ];
         
         let currentQuote = 0;
-        setInterval(() => {
-            currentQuote = (currentQuote + 1) % quotes.length;
-            const textEl = document.getElementById('quoteText');
-            const authorEl = document.getElementById('quoteAuthor');
-            
-            textEl.style.opacity = 0;
-            authorEl.style.opacity = 0;
+        let quoteInterval;
+        const quoteContainer = document.querySelector('.quote-container');
+        const textEl = document.getElementById('quoteText');
+        const authorEl = document.getElementById('quoteAuthor');
+        
+        function changeQuote() {
+            textEl.style.transform = 'translateY(-20px)';
+            textEl.style.opacity = '0';
+            authorEl.style.transform = 'translateY(-20px)';
+            authorEl.style.opacity = '0';
             
             setTimeout(() => {
+                currentQuote = (currentQuote + 1) % quotes.length;
                 textEl.innerText = quotes[currentQuote].text;
                 authorEl.innerText = quotes[currentQuote].author;
-                textEl.style.opacity = 1;
-                authorEl.style.opacity = 1;
-            }, 500);
-        }, 8000);
+                
+                textEl.style.transform = 'translateY(20px)';
+                authorEl.style.transform = 'translateY(20px)';
+                
+                // Trigger reflow
+                void textEl.offsetWidth;
+                
+                textEl.style.transform = 'translateY(0)';
+                textEl.style.opacity = '1';
+                authorEl.style.transform = 'translateY(0)';
+                authorEl.style.opacity = '1';
+            }, 500); // 500ms allows the exit animation to finish
+        }
+
+        function startSlider() {
+            quoteInterval = setInterval(changeQuote, 4000);
+        }
+
+        function stopSlider() {
+            clearInterval(quoteInterval);
+        }
+
+        startSlider();
+
+        // Pause on hover or touch
+        quoteContainer.addEventListener('mouseenter', stopSlider);
+        quoteContainer.addEventListener('mouseleave', startSlider);
+        quoteContainer.addEventListener('touchstart', stopSlider);
+        quoteContainer.addEventListener('touchend', startSlider);
     </script>
 
 </body>
