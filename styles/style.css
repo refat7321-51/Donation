@@ -290,9 +290,9 @@ a {
 .hero-content::before {
   content: '"';
   position: absolute;
-  top: -50px;
+  top: -30px;
   left: -20px;
-  font-size: 10rem;
+  font-size: 7rem;
   color: rgba(185, 28, 28, 0.2);
   font-family: var(--font-story);
   line-height: 1;
@@ -300,8 +300,8 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 3.5vw, 4rem);
+  line-height: 1.15;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
