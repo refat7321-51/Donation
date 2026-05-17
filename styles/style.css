@@ -819,6 +819,35 @@ a {
   z-index: 0;
 }
 
+.quote-slider-wrapper {
+  overflow: hidden;
+  cursor: grab;
+  position: relative;
+}
+
+.quote-slider-wrapper:active {
+  cursor: grabbing;
+}
+
+.quote-slider-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.quote-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.quote-slide {
+  min-width: 100%;
+  scroll-snap-align: center;
+  padding: 0 1rem;
+}
+
 .quote-text {
   font-family: var(--font-story);
   font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -828,7 +857,6 @@ a {
   position: relative;
   z-index: 1;
   font-style: italic;
-  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .quote-author {
@@ -836,7 +864,6 @@ a {
   color: var(--urgent-red);
   letter-spacing: 0.1em;
   font-size: 1.25rem;
-  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 /* ==========================================================================
