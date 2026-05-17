@@ -56,7 +56,7 @@
     </section>
 
     <!-- Statistics of Loss -->
-    <section class="loss-stats">
+    <section class="loss-stats reveal">
         <div class="container">
             <div class="loss-grid">
                 <div class="loss-item">
@@ -82,7 +82,7 @@
     <!-- Raw Donation Interface -->
     <section class="donate-section" id="donate">
         <div class="container">
-            <div class="donate-container">
+            <div class="donate-container reveal">
                 <div class="donate-header">
                     <h2 class="text-red">EMERGENCY INTERVENTION</h2>
                     <p class="section-subtitle" style="margin-bottom: 2rem;">Your contribution bypasses bureaucracy to deliver immediate trauma kits, survival rations, and clean water directly to those trapped in the crisis zone.</p>
@@ -124,7 +124,7 @@
             <div class="story-grid">
                 
                 <!-- Story 1 -->
-                <div class="story-item">
+                <div class="story-item reveal">
                     <div class="story-image">
                         <img src="./images/sad.jpg" alt="Child in ruins">
                     </div>
@@ -137,7 +137,7 @@
                 </div>
 
                 <!-- Story 2 -->
-                <div class="story-item">
+                <div class="story-item reveal">
                     <div class="story-image">
                         <img src="./images/food.jpg" alt="Hospital crisis">
                     </div>
@@ -150,7 +150,7 @@
                 </div>
 
                 <!-- Story 3 -->
-                <div class="story-item">
+                <div class="story-item reveal">
                     <div class="story-image">
                         <img src="./images/gaza stri.jpg" alt="Ration lines">
                     </div>
@@ -173,7 +173,7 @@
             
             <div class="pillars-grid" style="margin-top: 3rem;">
                 
-                <div class="pillar-card">
+                <div class="pillar-card reveal delay-1">
                     <div class="pillar-icon">
                         <img src="./icons/medicine.svg" alt="Medical">
                     </div>
@@ -181,7 +181,7 @@
                     <p>Delivering critical trauma kits, antibiotics, and surgical equipment directly to operating frontline hospitals.</p>
                 </div>
                 
-                <div class="pillar-card">
+                <div class="pillar-card reveal delay-2">
                     <div class="pillar-icon">
                         <img src="./icons/food.png" alt="Food">
                     </div>
@@ -189,7 +189,7 @@
                     <p>Distributing high-calorie survival food packs and ensuring access to clean drinking water.</p>
                 </div>
                 
-                <div class="pillar-card">
+                <div class="pillar-card reveal delay-3">
                     <div class="pillar-icon">
                         <img src="./icons/shelter.png" alt="Shelter">
                     </div>
@@ -197,6 +197,16 @@
                     <p>Providing thermal blankets, winterized tents, and temporary housing for displaced families.</p>
                 </div>
                 
+            </div>
+        </div>
+    </section>
+
+    <!-- Voices from the Ground -->
+    <section class="voices-section reveal">
+        <div class="container">
+            <div class="quote-container">
+                <p class="quote-text" id="quoteText">"We are operating without electricity, without anesthesia, and without basic supplies. The world must not look away."</p>
+                <span class="quote-author" id="quoteAuthor">- DR. AHMED, SURGEON IN NORTHERN GAZA</span>
             </div>
         </div>
     </section>
@@ -328,6 +338,46 @@
                 showToast(`${name} DONATED ${amount} JUST NOW.`);
             }, 12000);
         }, 5000);
+
+        // Scroll Reveal Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        // Quote Slider
+        const quotes = [
+            { text: '"We are operating without electricity, without anesthesia, and without basic supplies. The world must not look away."', author: '- DR. AHMED, SURGEON IN NORTHERN GAZA' },
+            { text: '"Every drop of water is a luxury. My children ask for bread, and I have nothing to give them but hope."', author: '- FATIMA, MOTHER OF THREE' },
+            { text: '"The sheer scale of destruction is beyond comprehension. We need immediate, unfiltered access to deliver aid."', author: '- UN AID WORKER ON THE GROUND' }
+        ];
+        
+        let currentQuote = 0;
+        setInterval(() => {
+            currentQuote = (currentQuote + 1) % quotes.length;
+            const textEl = document.getElementById('quoteText');
+            const authorEl = document.getElementById('quoteAuthor');
+            
+            textEl.style.opacity = 0;
+            authorEl.style.opacity = 0;
+            
+            setTimeout(() => {
+                textEl.innerText = quotes[currentQuote].text;
+                authorEl.innerText = quotes[currentQuote].author;
+                textEl.style.opacity = 1;
+                authorEl.style.opacity = 1;
+            }, 500);
+        }, 8000);
     </script>
 
 </body>
